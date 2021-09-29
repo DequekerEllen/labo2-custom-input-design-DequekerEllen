@@ -182,7 +182,7 @@ ol {
 
 li ul,
 li ol {
-  margin-bottom: 0;
+  margin-bottom: 0px;
 }
 
 blockquote {
@@ -717,12 +717,12 @@ input::placeholder {
   align-items: center;
 }
 
-.c-custom-option__fake-input:hover {
+.c-custom-option:hover .c-custom-option__fake-input {
   border-color: var(--global-color-neutral-xx-light);
 }
 
-.c-custom-option__fake-input:focus {
-  border: 1px solid var(--global-input-focus-borderColor);
+.c-custom-option:focus .c-custom-option__fake-input,
+.c-custom-option:active .c-custom-option__fake-input {
   border-color: var(--global-color-alpha);
   box-shadow: 0 0 0 3px var(--global-color-alpha-x-transparent);
 }
@@ -749,6 +749,30 @@ input::placeholder {
 
 .radio-border-mod {
   border-radius: 100%;
+}
+
+.c-option-list {
+  margin-bottom: 24px;
+}
+
+.c-option-list__item {
+  margin-bottom: 12px;
+}
+
+/*
+    Component: custom toggle
+    ---
+*/
+
+.c-custom-toggle__fake-input {
+  display: flex;
+  width: 48px;
+  height: 24px;
+  border-radius: 50px;
+  border: var(--global-borderWidth) solid var(--global-input-borderColor);
+  margin-right: 8px;
+  justify-content: center;
+  align-items: center;
 }
 
 /*------------------------------------*\
