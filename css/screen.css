@@ -854,7 +854,7 @@ input::placeholder {
   width: 24px;
   fill: var(--global-color-neutral-dark);
   margin-left: 300px;
-  top: 100px;
+  top: 105px;
   pointer-events: none;
 }
 
