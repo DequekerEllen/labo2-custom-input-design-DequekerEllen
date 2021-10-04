@@ -38,6 +38,7 @@
   --global-color-neutral-xx-dark: #4b4c60;
   --global-color-neutral-xxx-dark: #35374d;
   --global-color-neutral-xxxx-dark: #20223a;
+  --global-color-neutral-xxxx-dark-hover: #0b0d29;
   --global-color-neutral-xxxx-dark-trans: #0a0a0a10;
 
   --global-input-backgroundColor: White;
@@ -520,15 +521,15 @@ input::placeholder {
 }
 
 .c-logo__path--1 {
-  fill: var(--global-color-neutral-xxxx-dark);
+  fill: var(--logo__path--1--fill, var(--global-color-neutral-xxxx-dark));
 }
 
 .c-logo__path--2 {
-  fill: var(--global-color-alpha);
+  fill: var(--logo__path--2--fill, var(--global-color-alpha));
 }
 
 .c-logo__path--3 {
-  fill: var(--color-alpha-x-dark);
+  fill: var(--logo__path--3--fill, var(--global-color-alpha-x-dark));
 }
 
 /*
@@ -543,6 +544,10 @@ input::placeholder {
   border-radius: var(--global-borderRadius);
   box-shadow: 0 0 0 var(--global-borderWidth) rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.075);
   overflow: hidden;
+}
+
+.c-card a {
+  text-decoration: none;
 }
 
 /* Add padding to child for more flexibility */
@@ -1173,6 +1178,50 @@ input::placeholder {
     These examples override the primary ('mobile first') styles.
     USE THEM INLINE!
 */
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: var(--global-color-neutral-xxxx-dark);
+  }
+  .c-logo {
+    --logo__path--1--fill: White;
+    --logo__path--2--fill: var(--logo__path--1--fill);
+    --logo__path--3--fill: var(--logo__path--1--fill);
+  }
+
+  .c-card {
+    background-color: var(--global-color-neutral-xxx-dark);
+    color: white;
+  }
+
+  .c-input {
+    background-color: var(--global-color-neutral-xxxx-dark);
+    border-color: var(--global-color-neutral-xxxx-dark);
+    color: white;
+  }
+  .c-input:hover {
+    border-color: var(--global-color-neutral-xxxx-dark-hover);
+  }
+
+  .c-label {
+    color: var(--global-color-neutral-x-light);
+  }
+
+  .c-custom-option__fake-input {
+    border: var(--global-borderWidth) solid var(--global-color-neutral-xxxx-dark);
+    background-color: var(--global-color-neutral-xxxx-dark);
+  }
+  .c-custom-option__fake-input--checkbox .c-custom-option__symbol {
+    background-color: var(--global-color-neutral-xxxx-dark);
+  }
+  .c-custom-option:hover .c-custom-option__fake-input {
+    border-color: var(--global-color-neutral-xxxx-dark-hover);
+  }
+
+  .c-card__footer {
+    border-top: var(--global-borderWidth) solid var(--global-color-neutral-xxxx-dark);
+  }
+}
 
 /* Extra small devices (portrait phones, less than 576px)
 No media query since this is the default in mobile first design
